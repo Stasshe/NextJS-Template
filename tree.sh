@@ -21,3 +21,6 @@ done
 echo "合計行数: $total_lines" >> tree.txt
 echo "合計文字数: $total_chars" >> tree.txt
 echo "合計ファイルサイズ(bytes): $total_bytes" >> tree.txt
+echo "" >> tree.txt
+echo "開発環境の容量:" >> tree.txt
+du -sh . >> tree.txt
