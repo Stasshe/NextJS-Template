@@ -289,14 +289,12 @@ coverage
 .DS_Store
 .vscode
 *.md
-*.yaml
-*.yml
 ```
 
 #### フォーマット対象外ファイル
-- ビルド成果物（`.next`, `dist`, `build`）
+- ビルド成果物（`.next`, `out`, `build`）
 - 依存関係（`node_modules`）
-- 設定ファイル（`*.md`, `*.yaml`, `*.yml`）
+- 手書きファイル（`*.md`）
 - システムファイル（`.git`, `.DS_Store`）
 
 ---

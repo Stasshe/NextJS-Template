@@ -1,92 +1,130 @@
 'use client';
 
-import Image from 'next/image';
-
 import { ThemeToggle } from '@/components/ThemeToggle';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-sans">
-      {/* テーマ切り替えボタンを右上に配置 */}
-      <div className="fixed top-4 right-4 z-50">
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-background via-background to-muted">
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-5" />
+      <div className="absolute top-0 -left-4 w-72 h-72 bg-primary/10 rounded-full mix-blend-multiply filter blur-xl animate-blob" />
+      <div className="absolute top-0 -right-4 w-72 h-72 bg-secondary/10 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000" />
+      <div className="absolute -bottom-8 left-20 w-72 h-72 bg-accent/10 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000" />
+
+      {/* Theme toggle */}
+      <div className="fixed top-6 right-6 z-50">
         <ThemeToggle />
       </div>
 
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-mono">
-          <li className="mb-2">
-            Get started by editing{' '}
-            <code className="bg-muted px-1 py-0.5 rounded font-mono font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+      {/* Main content */}
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 text-center">
+        {/* Hero section */}
+        <div className="max-w-4xl mx-auto space-y-8">
+          {/* Main heading */}
+          <div className="space-y-4">
+            <h1 className="text-6xl sm:text-8xl font-bold bg-gradient-to-r from-primary via-foreground to-primary bg-clip-text text-transparent leading-tight">
+              Roughfts
+            </h1>
+            <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full" />
+          </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-transparent transition-colors flex items-center justify-center bg-primary text-primary-foreground gap-2 hover:bg-primary/90 font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-border transition-colors flex items-center justify-center hover:bg-accent hover:text-accent-foreground font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          {/* Subtitle */}
+          <p className="text-xl sm:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Next.js Template with Modern Design
+          </p>
+
+          {/* Feature cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
+            <div className="group p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-all duration-300 hover:scale-105">
+              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                <svg
+                  className="w-6 h-6 text-primary"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold mb-2">Fast</h3>
+              <p className="text-muted-foreground text-sm">
+                Optimized for performance with Next.js 14
+              </p>
+            </div>
+
+            <div className="group p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-all duration-300 hover:scale-105">
+              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                <svg
+                  className="w-6 h-6 text-primary"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold mb-2">Modern</h3>
+              <p className="text-muted-foreground text-sm">
+                Built with the latest technologies and best practices
+              </p>
+            </div>
+
+            <div className="group p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-all duration-300 hover:scale-105">
+              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                <svg
+                  className="w-6 h-6 text-primary"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold mb-2">Flexible</h3>
+              <p className="text-muted-foreground text-sm">
+                Customizable and ready for any project
+              </p>
+            </div>
+          </div>
+
+          {/* CTA buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-12">
+            <button className="group relative px-8 py-4 bg-primary text-primary-foreground rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 hover:scale-105">
+              <span className="relative z-10">Get Started</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/80 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity" />
+            </button>
+
+            <button className="group px-8 py-4 bg-card border border-border rounded-xl font-medium transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:scale-105">
+              <span className="bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent">
+                Learn More
+              </span>
+            </button>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4 text-sm text-muted-foreground hover:text-foreground transition-colors"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image aria-hidden src="/file.svg" alt="File icon" width={16} height={16} />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4 text-sm text-muted-foreground hover:text-foreground transition-colors"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image aria-hidden src="/window.svg" alt="Window icon" width={16} height={16} />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4 text-sm text-muted-foreground hover:text-foreground transition-colors"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image aria-hidden src="/globe.svg" alt="Globe icon" width={16} height={16} />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        {/* Bottom section */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+          <div className="flex items-center space-x-2 text-muted-foreground text-sm">
+            <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+            <span>Powered by Next.js & Tailwind CSS</span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
