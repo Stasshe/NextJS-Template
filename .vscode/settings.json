@@ -56,5 +56,18 @@
   "workbench.startupEditor": "none",
   "workbench.colorTheme": "Default Dark Modern",
   "workbench.iconTheme": "vs-seti",
-  "explorer.confirmDelete": false
+  "explorer.confirmDelete": false,
+  "typescript.preferences.includePackageJsonAutoImports": "auto",
+  "typescript.suggest.autoImports": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.inlayHints.parameterNames.enabled": "all",
+  "typescript.inlayHints.variableTypes.enabled": true,
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "workbench.tree.indent": 20,
+  "breadcrumbs.enabled": true,
+  "explorer.compactFolders": false
 }
