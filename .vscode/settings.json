@@ -23,6 +23,8 @@
   "eslint.codeAction.showDocumentation": {
     "enable": true
   },
+  "eslint.codeActionsOnSave.mode": "all",
+  "eslint.format.enable": false,
   "prettier.enable": true,
   "prettier.requireConfig": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",

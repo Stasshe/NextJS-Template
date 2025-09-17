@@ -16,7 +16,7 @@ const commonConfig = {
 const nextConfig = {
   // 共通設定を適用
   ...commonConfig,
-  
+
   // 本番ビルドモード時のみ静的エクスポートを有効化
   output: isProductionBuild ? 'export' : undefined,
   trailingSlash: isProductionBuild,

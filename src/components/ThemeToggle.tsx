@@ -1,19 +1,19 @@
-'use client'
+'use client';
 
-import { useTheme } from '@/contexts/ThemeContext'
-import { useEffect, useState } from 'react'
+import { useTheme } from '@/contexts/ThemeContext';
+import { useEffect, useState } from 'react';
 
 export function ThemeToggle() {
-  const { theme, toggleTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
+  const { theme, toggleTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
   // クライアントサイドでマウント後に表示
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
   if (!mounted) {
-    return <div className="h-10 w-10" /> // プレースホルダー
+    return <div className="h-10 w-10" />; // プレースホルダー
   }
 
   return (
@@ -47,5 +47,5 @@ export function ThemeToggle() {
         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
       </svg>
     </button>
-  )
+  );
 }
