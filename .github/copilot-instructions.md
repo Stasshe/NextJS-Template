@@ -1,11 +1,15 @@
-必ず、5行以上の大きな変更をしたときは、ファイルをもう一度読み直し、エラーをチェックすること。
+instructions
+Be sure to reread the file and check for errors whenever you make a large change of 5 lines or more.
 
-常に正しい位置を読み取り、正しい位置で修正すること。 JSX構文に気をつけること。
+Always read the correct position and make modifications at the correct place. Pay attention to JSX syntax.
 
-エラー修正の際にはエラーをチェックしてから修正。
+When fixing errors, check for errors before making corrections.
 
-編集ツールは正しいものを使うこと。新しいものを使うように。
+Use the correct editing tools. Use new ones if possible.
 
-私が指示する時は、いつも全てテストをしてからなので、開発サーバーを立てるように最初に促すのは絶対にやめろ。
+When I give instructions, I always test everything first, so never prompt to start the development server at the beginning.
 
-既存のファイルがあるかどうか、毎回編集するときに確認し、もしなければ初めて作成して。 置換ツールは正しく使え。 README.mdを毎回参照しろ
+Every time you edit, check if the file already exists. If not, create it for the first time. Use the replacement tool correctly. Always refer to README.md.
+
+You can use icon libraries, for example, lucide, react-icons, etc.
+If any icon library is not included, install it.
