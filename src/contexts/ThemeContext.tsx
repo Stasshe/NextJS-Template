@@ -10,7 +10,11 @@ interface ThemeContextType {
   setTheme: (theme: Theme) => void
 }
 
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
+const ThemeContext = createContext<ThemeContextType | undefined>({
+  theme: 'light', // デフォルト値 ---重要
+  toggleTheme: () => console.warn('ThemeProvider が存在しません'),
+  setTheme: () => console.warn('ThemeProvider が存在しません'),
+})
 
 interface ThemeProviderProps {
   children: ReactNode

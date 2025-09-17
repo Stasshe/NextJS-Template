@@ -13,3 +13,6 @@ Every time you edit, check if the file already exists. If not, create it for the
 
 You can use icon libraries, for example, lucide, react-icons, etc.
 If any icon library is not included, install it.
+
+
+ファイルを見せてください　ではなく、自分でツールがあるので、コードを直接閲覧・編集してください。
