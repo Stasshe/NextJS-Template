@@ -397,11 +397,17 @@ $ git commit -m "新機能を追加"
 
 #### 新しいフックの追加
 ```bash
-# commit-msgフックを追加
-npx husky add .husky/commit-msg 'npx commitlint --edit $1'
+# commit-msgフックを追加（手動でファイル作成）
+echo 'npx commitlint --edit $1' > .husky/commit-msg
+chmod +x .husky/commit-msg
 
-# pre-pushフックを追加
-npx husky add .husky/pre-push 'npm test'
+# pre-pushフックを追加（手動でファイル作成）
+echo 'npm test' > .husky/pre-push
+chmod +x .husky/pre-push
+
+# または、直接ファイルを編集
+# .husky/commit-msg ファイルを作成して以下を記述：
+# npx commitlint --edit $1
 ```
 
 #### フックの無効化
@@ -428,7 +434,9 @@ HUSKY=0 git commit -m "Huskyを無効化してコミット"
 1. `npm install husky --save-dev` でHuskyをインストール
 2. `npx husky install` でGit Hooksを有効化
 3. `.husky/` フォルダが作成される
-4. `package.json` の `prepare` スクリプトで自動化
+4. 手動でフックファイルを作成（例：`echo 'npx lint-staged' > .husky/pre-commit`）
+5. 実行権限を付与（例：`chmod +x .husky/pre-commit`）
+6. `package.json` の `prepare` スクリプトで自動化
 
 ### よくある質問（FAQ）
 
@@ -483,7 +491,10 @@ npx husky install
 # Huskyを再初期化
 rm -rf .husky
 npx husky install
-npx husky add .husky/pre-commit "npx lint-staged"
+
+# pre-commitフックを手動で再作成
+echo 'npx lint-staged' > .husky/pre-commit
+chmod +x .husky/pre-commit
 ```
 
 #### エラー: `lint-staged: command not found`
@@ -609,7 +620,9 @@ trim_trailing_whitespace = false  # Markdownでは行末空白を保持
     "esbenp.prettier-vscode",        // Prettier - コードフォーマッター
     "dbaeumer.vscode-eslint",        // ESLint - 静的解析
     "bradlc.vscode-tailwindcss",     // Tailwind CSS - ユーティリティクラス補完
-    "ms-vscode.vscode-typescript-next" // TypeScript - 型サポート
+    "ms-vscode.vscode-typescript-next", // TypeScript - 型サポート
+    "github.copilot",                // GitHub Copilot - AI コード補完
+    "github.copilot-chat"            // GitHub Copilot Chat - AI チャット
   ],
   "unwantedRecommendations": []
 }
@@ -636,6 +649,16 @@ trim_trailing_whitespace = false  # Markdownでは行末空白を保持
    - 型チェック
    - インテリセンス
    - リファクタリング支援
+
+5. **GitHub Copilot**
+   - AI による自動コード補完
+   - コンテキストを理解した提案
+   - 複数行のコード生成
+
+6. **GitHub Copilot Chat**
+   - AI とのチャット形式での開発支援
+   - コード説明・改善提案
+   - バグ修正・最適化のアドバイス
 
 ---
 
