@@ -10,12 +10,22 @@
   "files.exclude": {
     "**/.next": true,
     "**/node_modules": true,
-    "**/.git": true
+    "**/.git": true,
+    "**/out": true
+  },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/.hg/store/**": true,
+    "**/node_modules/**": true,
+    "**/.next/**": true,
+    "**/out/**": true
   },
   "search.exclude": {
     "**/node_modules": true,
     "**/.next": true,
-    "**/.git": true
+    "**/.git": true,
+    "**/out": true
   },
   "typescript.tsdk": "node_modules/typescript/lib",
   "eslint.enable": true,
@@ -28,6 +38,9 @@
   "prettier.enable": true,
   "prettier.requireConfig": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.smoothScrolling": true,
+  "editor.renderWhitespace": "all",
+  "editor.rulers": [80, 120, 160],
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -52,7 +65,7 @@
     "strings": true
   },
   "editor.suggestSelection": "first",
-  "editor.minimap.enabled": false,
+  "editor.minimap.enabled": true,
   "workbench.startupEditor": "none",
   "workbench.colorTheme": "Default Dark Modern",
   "workbench.iconTheme": "vs-seti",
