@@ -1,7 +1,5 @@
 'use client';
 
-import { ThemeToggle } from '@/components/ThemeToggle';
-
 export default function Home() {
   return (
     <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-background via-background to-muted">
@@ -10,11 +8,6 @@ export default function Home() {
       <div className="absolute top-0 -left-4 w-72 h-72 bg-primary/10 rounded-full mix-blend-multiply filter blur-xl animate-blob" />
       <div className="absolute top-0 -right-4 w-72 h-72 bg-secondary/10 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000" />
       <div className="absolute -bottom-8 left-20 w-72 h-72 bg-accent/10 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000" />
-
-      {/* Theme toggle */}
-      <div className="fixed top-6 right-6 z-50">
-        <ThemeToggle />
-      </div>
 
       {/* Main content */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 text-center">
