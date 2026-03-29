@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useEffect, useState, ReactNode } from "react";
 
-type Theme = 'light' | 'dark';
+type Theme = "light" | "dark";
 
 interface ThemeContextType {
   theme: Theme;
@@ -11,9 +11,9 @@ interface ThemeContextType {
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>({
-  theme: 'light', // デフォルト値 ---重要
-  toggleTheme: () => console.warn('ThemeProvider が存在しません'),
-  setTheme: () => console.warn('ThemeProvider が存在しません'),
+  theme: "light", // デフォルト値 ---重要
+  toggleTheme: () => console.warn("ThemeProvider が存在しません"),
+  setTheme: () => console.warn("ThemeProvider が存在しません"),
 });
 
 interface ThemeProviderProps {
@@ -21,7 +21,7 @@ interface ThemeProviderProps {
 }
 
 export function ThemeProvider({ children }: ThemeProviderProps) {
-  const [theme, setThemeState] = useState<Theme>('light');
+  const [theme, setThemeState] = useState<Theme>("light");
   const [mounted, setMounted] = useState(false);
 
   // クライアントサイドでマウント後に初期化
@@ -29,14 +29,14 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
     setMounted(true);
 
     // ローカルストレージからテーマを取得、またはシステム設定を確認
-    const savedTheme = localStorage.getItem('theme') as Theme;
+    const savedTheme = localStorage.getItem("theme") as Theme;
 
     if (savedTheme) {
       setThemeState(savedTheme);
     } else {
       // システムのダークモード設定を確認
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      setThemeState(prefersDark ? 'dark' : 'light');
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      setThemeState(prefersDark ? "dark" : "light");
     }
   }, []);
 
@@ -45,17 +45,17 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
     if (!mounted) return;
 
     const root = document.documentElement;
-    if (theme === 'dark') {
-      root.classList.add('dark');
+    if (theme === "dark") {
+      root.classList.add("dark");
     } else {
-      root.classList.remove('dark');
+      root.classList.remove("dark");
     }
 
-    localStorage.setItem('theme', theme);
+    localStorage.setItem("theme", theme);
   }, [theme, mounted]);
 
   const toggleTheme = () => {
-    setThemeState(prev => (prev === 'light' ? 'dark' : 'light'));
+    setThemeState((prev) => (prev === "light" ? "dark" : "light"));
   };
 
   const setTheme = (newTheme: Theme) => {
@@ -64,7 +64,7 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
 
   // ハイドレーション完了前は何も表示しない（フラッシュを防ぐ）
   if (!mounted) {
-    return <div style={{ visibility: 'hidden' }}>{children}</div>;
+    return <div style={{ visibility: "hidden" }}>{children}</div>;
   }
 
   return (
@@ -77,7 +77,7 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
 export function useTheme() {
   const context = useContext(ThemeContext);
   if (context === undefined) {
-    throw new Error('useTheme must be used within a ThemeProvider');
+    throw new Error("useTheme must be used within a ThemeProvider");
   }
   return context;
 }
