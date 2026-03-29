@@ -34,10 +34,6 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // 本番ビルドでは各種エラーで失敗しないようにする
-  eslint: {
-    ignoreDuringBuilds: isProductionBuild,
-  },
   typescript: {
     ignoreBuildErrors: isProductionBuild,
   },

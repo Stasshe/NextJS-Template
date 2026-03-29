@@ -1,11 +1,8 @@
 .
-├── Development
-│   ├── QUICK_REFERENCE.md
-│   └── README.md
 ├── README.md
 ├── SPECIFICATION.md
-├── eslint.config.mjs
-├── next-env.d.ts
+├── TODO.md
+├── biome.json
 ├── next.config.ts
 ├── package-lock.json
 ├── package.json
@@ -21,8 +18,6 @@
 │   │   ├── globals.css
 │   │   ├── layout.tsx
 │   │   └── page.tsx
-│   ├── components
-│   │   └── ThemeToggle.tsx
 │   └── contexts
 │       └── ThemeContext.tsx
 ├── tailwind.config.ts
@@ -30,12 +25,12 @@
 ├── tree.txt
 └── tsconfig.json
 
-7 directories, 24 files
+5 directories, 21 files
 
 src/*.ts, *.tsx の統計:
-合計行数: 263
-合計文字数: 8478
-合計ファイルサイズ(bytes): 8880
+合計行数: 242
+合計文字数: 9142
+合計ファイルサイズ(bytes): 9442
 
 開発環境の容量:
-655M	.
+416M	.
