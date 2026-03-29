@@ -18,7 +18,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
           cache: 'npm'
 
       - name: Get version from package.json
@@ -83,9 +83,7 @@ jobs:
           release_name: v${{ steps.version.outputs.version }}
           body: |
             ## 🚀 Release v${{ steps.version.outputs.version }}
-
-            **リリース日:** `${{ github.event.head_commit.timestamp != '' && github.event.head_commit.timestamp || github.run_started_at }}`
-
+            
             ### 🔄 変更内容
 
             ${{ steps.changelog.outputs.COMMITS }}
