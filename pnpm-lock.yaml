@@ -9,7 +9,7 @@ importers:
   .:
     dependencies:
       next:
-        specifier: ^16.2.1
+        specifier: ^16.2.6
         version: 16.2.6(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       react:
         specifier: 19.1.1
@@ -19,7 +19,7 @@ importers:
         version: 19.1.1(react@19.1.1)
     devDependencies:
       '@biomejs/biome':
-        specifier: ^1.9.0
+        specifier: ^1.9.4
         version: 1.9.4
       '@tailwindcss/postcss':
         specifier: 4.1.13
@@ -37,7 +37,7 @@ importers:
         specifier: 10.4.21
         version: 10.4.21(postcss@8.5.14)
       tailwindcss:
-        specifier: ^3.4.1
+        specifier: ^3.4.19
         version: 3.4.19
       typescript:
         specifier: 5.9.2
