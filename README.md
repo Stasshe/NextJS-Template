@@ -1,5 +1,7 @@
-tailwind v3.
-if you apply some animation, use GSAP, not but framer-motion.
+簡潔な Next.js + Tailwind テンプレート。
 
-static site, and dont use dynamic param.
+- シンプルなホームページ: [src/app/page.tsx](src/app/page.tsx#L1)
+ 
+
+開発: `pnpm install` → `pnpm dev`
 
