@@ -10,6 +10,7 @@
     "lint:fix": "biome check --write src/",
     "format": "biome format --write src/"
   },
+  "packageManager": "pnpm@11.2.1",
   "dependencies": {
     "next": "^16.2.6",
     "react": "19.1.1",
